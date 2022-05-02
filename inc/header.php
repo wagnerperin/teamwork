@@ -17,4 +17,5 @@
 <div class="p-5 bg-primary text-white text-center">
   <h1>MS-Cursos</h1>
   <p>Crie seus cursos e gerencie seus alunos</p> 
+
 </div>
