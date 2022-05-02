@@ -25,6 +25,7 @@
         <div class="invalid-feedback"> Por favor corrija sua senha. </div>
        <div class="col-12 input-group-sm mt-4 d-flex justify-content-center">
         <input type="submit" class="btn btn-primary btn-block p-5 pt-2 pb-2 mb-3 font-size-register" value="LOGIN" style="border-radius: 10px;">
+
        </div>
 
        <div class="col-12 pt-3">
