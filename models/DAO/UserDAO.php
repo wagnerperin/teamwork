@@ -1,5 +1,6 @@
 <?php
     require_once("../config/Banco.php");
+    require_once("../User.php");
 
     class UserDAO {
         private static $instance;
