@@ -1,12 +1,10 @@
 <?php
     
-    require_once("models/User.php");
-    require_once("DAO/UserDAO.php");
+    require_once("../models/User.php");
+    require_once("../models/UserDAO.php");
     
-    UserDAO::getInstance()->save(new User($_POST['name'], $_POST['email'], $_POST['cpf'], $_POST['password']));
+    UserDAO::getInstance()->save(new User($_POST['name'], $_POST['email'], $_POST['cpf'], $_POST['password'], 0));
 
-    session_start();
-    $_SESSION['new_user'] = $newUser->name;
-    header("Location: index.php");
+    header("Location: ../index.php");
 
 ?>
