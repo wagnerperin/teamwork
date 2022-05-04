@@ -12,7 +12,7 @@
      <h3 class="pt-3"><b class="text-secondary"> Login </b></h3>
      <hr>
 
-      <form class="g-3 needs-validation pt-3" novalidate>
+      <form class="g-3 needs-validation pt-3" novalidate action="../controllers/login.php">
        <div class="col-md-6 pt-3">
         <label for="" class="form-label"> E-mail </label>
         <input type="email" class="form-control" id="" placeholder="Seu email"  required>

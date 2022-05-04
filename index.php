@@ -1,7 +1,11 @@
 <?php
+  session_start();
   require_once("inc/header.php");
   require_once("inc/menu.php");
+
+
 ?>
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-3">
