@@ -23,6 +23,7 @@
         <label for="" class="form-label"> Senha </label>
         <input type="password" class="form-control" id="" required>
         <div class="invalid-feedback"> Por favor corrija sua senha. </div>
+
        </div>
 
        <div class="col-12 pt-3">
