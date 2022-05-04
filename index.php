@@ -144,8 +144,8 @@
           <div class="card" style="width: 15rem;height: 264px;">
             <img src="https://img-b.udemycdn.com/course/240x135/720750_6cba_8.jpg" alt="...">
             <div class="card-body">
-              <b style="" class="card-text">Curso Completo JAVA para Iniciantes</b><br>
-              <span style="font-size:13px" class="text-black-50">Silvana Aguiar</span><br>
+              <b  class="card-text">Curso Completo JAVA para Iniciantes</b><br>
+              <span styles="font-size:13px" class="text-black-50">Silvana Aguiar</span><br>
               <b>R$ 179,90</b>
             </div>
           </div>
@@ -155,7 +155,7 @@
             <img src="https://img-b.udemycdn.com/course/240x135/1048978_1887_3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <b class="card-text">Linguagem de programação C# - Básico</b><br>
-              <span style="font-size:13px" class="text-black-50">Júlio Santana</span><br>
+              <span styles="font-size:13px" class="text-black-50">Júlio Santana</span><br>
               <b class="">R$ 79,90</b>
             </div>
           </div>
@@ -186,7 +186,7 @@
           <div class="card" style="width: 15rem;height: 264px;">
             <img src="https://img-b.udemycdn.com/course/240x135/999200_ae6d_4.jpg" alt="...">
             <div class="card-body">
-              <b style="" class="card-text">Introduction to TypeScript Development</b><br>
+              <b styles="" class="card-text">Introduction to TypeScript Development</b><br>
               <span style="font-size:13px" class="text-black-50">Guilherme Santos</span><br>
               <b>R$ 99,90</b>
             </div>
