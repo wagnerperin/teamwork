@@ -132,7 +132,7 @@
       <div class="row">
         <div class="col-3">
           <div class="card" style="width: 15rem;height: 264px;">
-            <img src="https://img-b.udemycdn.com/course/240x135/4152006_54df_5.jpg" class="card-img-top" alt="...">
+            <a href="views/pageCourses.php"><img src="https://img-b.udemycdn.com/course/240x135/4152006_54df_5.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
               <b class="card-text">Python Django 2021 - Complete Course</b><br>
               <span style="font-size:13px" class="text-black-50">Victor Almeida</span><br>
