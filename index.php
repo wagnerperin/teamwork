@@ -1,4 +1,6 @@
 <?php
+  ini_set('display_errors', 0);
+  error_reporting(E_ERROR);
   session_start();
   require_once("inc/header.php");
   require_once("inc/menu.php");

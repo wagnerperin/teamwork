@@ -1,6 +1,10 @@
 <?php
-include "../inc/header.php";
-include "../inc/menu.php";
+    ini_set('display_errors', 0);
+    error_reporting(E_ERROR);
+    include "../inc/header.php";
+    include "../inc/menu.php";
+
+    require("../inc/checkLogedIn.php");
 ?>
 
 <div class="bg-light">
