@@ -1,6 +1,7 @@
 <?php
     require_once("../config/Banco.php"); 
-    require_once("User.php"); 
+    require_once("User.php");
+    require_once("../controllers/login.php");
 
     class UserDAO {
         private static $instance;
@@ -24,6 +25,13 @@
             $stmt->bindParam("userType", $user->userType);
             $stmt->bindParam("createdAt", $user->createdAt);
             $stmt->execute();
+        }
+
+        public function findByMail($email) {
+         $user = Banco::getInstance()->query("SELECT password, email, userType, name FROM Users WHERE email = \"$email\"", PDO::FETCH_OBJ);
+         $user->execute();
+         return $user->fetch();
+
         }
         
     }
