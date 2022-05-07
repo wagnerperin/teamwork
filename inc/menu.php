@@ -7,13 +7,13 @@
 
           <ul class="navbar-nav" class="">
             <li class="nav-item ">
-              <a class="nav-link active" href="/teamwork/">Criar Curso</a>
+              <a class="nav-link active" href="/teamwork/views/newCourses.php">Criar Curso</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/teamwork/views/login.php">Painel</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/teamwork/views/cadastro.php"> <?php echo $_SESSION["name"]; ?> Seja bem vindo </a>
+              <a class="nav-link" href="/teamwork/views/newUser.php"> <?php echo $_SESSION["name"]; ?> Seja bem vindo </a>
             </li>
           </ul>
 
@@ -28,13 +28,13 @@
 
               <ul class="navbar-nav">
                   <li class="nav-item ">
-                    <a class="nav-link active" href="/teamwork/">Inicio</a>
+                    <a class="nav-link active" href="/teamwork/index.php">Inicio</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/teamwork/views/login.php">Login</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/teamwork/views/cadastro.php">Cadastro</a>
+                    <a class="nav-link" href="/teamwork/views/newUser.php">Cadastro</a>
                   </li>
               </ul>
 

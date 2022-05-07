@@ -1,11 +1,9 @@
 <?php
 
     require_once("../config/Banco.php"); 
-    session_start();
+    require_once("EnrollmentDAO.php"); 
 
-    if(!isset($_SESSION['login']) || !$_SESSION['login']) header("Location: login.php");
-
-    class Matricula {
+    class EnrollmentDAO {
         private static $instance;
 
         public static function getInstance() {
@@ -15,18 +13,14 @@
             return self::$instance;
         }
 
-        public function save($matricula) {
+        public function save(Enrollment $enrollment) {
 
             $stmt = Banco::getInstance()->prepare("INSERT INTO `Enrollment` (`enrollId`, `userId`, `courseId`, `eval`, `result`) VALUES (:enrollId, :userId, :courseId, NULL, '0')");
-            $stmt->bindParam("enrollId", $matricula->enrollId);
-            $stmt->bindParam("userId", $matricula->userId);
-            $stmt->bindParam("courseId", $matricula->courseId);
+            $stmt->bindParam("enrollId", $enrollment->enrollId);
+            $stmt->bindParam("userId", $enrollment->userId);
+            $stmt->bindParam("courseId", $enrollment->courseId);
             
             $stmt->execute();
         }
         
     }
-
-    header("Location: ../index.php")
-
-?>

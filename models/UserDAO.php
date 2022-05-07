@@ -15,8 +15,6 @@
 
         public function save(User $user) {
 
-            
-
             $stmt = Banco::getInstance()->prepare("INSERT INTO Users(name, email, cpf, password, userType,	createdAt) VALUES (:name, :email, :cpf, :password, :userType, :createdAt)");
             $stmt->bindParam("name", $user->name);
             $stmt->bindParam("email", $user->email);

@@ -6,12 +6,13 @@
     $user = UserDAO::getInstance()->findByMail($_POST['email']);
     
 
-session_start();
+    session_start();
 
     if($user->senha == ($_POST['senha'])){
         $_SESSION['login'] = true;
+        $_SESSION['userId'] = $user->userId;
         $_SESSION["email"] = $user->email;
-        $_SESSION["tipoUsuario"] = $user->userType;
+        $_SESSION["userType"] = $user->userType;
         $_SESSION["name"] = $user->name;
         header('Location: ../index.php');
     }
