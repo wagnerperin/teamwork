@@ -15,7 +15,7 @@
             <hr>
         </div>
         <div>
-            <form class="g-3 needs-validation pt-3" novalidate method="POST" action="../controllers/cadastroCursos.php" enctype="multipart/form-data">
+            <form class="g-3 needs-validation pt-3" novalidate method="POST" action="../controllers/saveCourses.php" enctype="multipart/form-data">
                 <div class="col-md-4">
                     <label for="validationCustom01" class="form-label">Título</label>
                     <input type="text" class="form-control" name="title" id="validationCustom01" placeholder="Titulo do curso" required>

@@ -12,7 +12,7 @@ include "../inc/menu.php";
       </div>
 
       <div>
-        <form class="g-3 needs-validation pt-3" novalidate method="POST" action="../controllers/cadastro.php">
+        <form class="g-3 needs-validation pt-3" novalidate method="POST" action="../controllers/saveUser.php">
           <div class="col-md-4">
             <label for="validationCustom01" class="form-label">Nome</label>
             <input type="text" class="form-control" name="name" id="validationCustom01" placeholder="Seu Nome" required>

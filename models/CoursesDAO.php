@@ -14,8 +14,6 @@
 
         public function save(Courses $courses) {
 
-            var_dump($courses);
-
             $stmt = Banco::getInstance()->prepare("INSERT INTO Courses(title, subtitle, description, image, createdAt,creatorId) VALUES (:title, :subtitle, :description, :image, :createdAt, :creatorId)");
             $stmt->bindParam("title", $courses->title);
             $stmt->bindParam("subtitle", $courses->subtitle);
