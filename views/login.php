@@ -13,16 +13,16 @@
      <h3 class="pt-3"><b class="text-secondary"> Login </b></h3>
      <hr>
 
-      <form class="g-3 needs-validation pt-3" novalidate action="../controllers/login.php">
+      <form class="g-3 needs-validation pt-3" novalidate action="../controllers/login.php" method="POST">
        <div class="col-md-6 pt-3">
         <label for="" class="form-label"> E-mail </label>
-        <input type="email" class="form-control" id="" placeholder="Seu email"  required>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Seu email"  required>
         <div class="valid-feedback"> Tudo ok </div>
        </div>
 
        <div class="col-md-6 pt-3">
         <label for="" class="form-label"> Senha </label>
-        <input type="password" class="form-control" id="" required>
+        <input type="password" class="form-control" id="password" name="password" required>
         <div class="invalid-feedback"> Por favor corrija sua senha. </div>
 
        </div>
@@ -36,7 +36,7 @@
        </div>
 
        <div class="col-12 pt-3">
-        <button class="btn btn-primary" type="submit"> Logar </button>
+        <input type="submit" class="btn btn-primary" value="Logar"/> 
        </div>
       </form>
      

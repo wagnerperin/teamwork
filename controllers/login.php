@@ -4,11 +4,9 @@
     require_once("../models/UserDAO.php");
     
     $user = UserDAO::getInstance()->findByMail($_POST['email']);
-    
 
-    session_start();
-
-    if($user->senha == ($_POST['senha'])){
+    if(password_verify($_POST['password'], $user->password)){
+        session_start();
         $_SESSION['login'] = true;
         $_SESSION['userId'] = $user->userId;
         $_SESSION["email"] = $user->email;
