@@ -1,8 +1,6 @@
 <?php
-  ini_set('display_errors', 1);
-  error_reporting(E_ALL);
-
-  session_start();
+  ini_set('display_errors', 0);
+  error_reporting(E_ERROR);
   require_once __DIR__."/inc/header.php";
   require_once __DIR__."/inc/menu.php";
   require_once __DIR__."/models/CoursesDAO.php";
@@ -144,7 +142,7 @@
         <div class="col-3">
           <div class="card ml-2" style="width: 15rem;height: 264px; ">
             <a href="views/pageCourses.php?courseId=<?php echo $course->courseId; ?>">
-              <img src="<?php echo $course->image; ?>" alt="...">
+              <img style="max-width: 100%" src="<?php echo $course->image; ?>" alt="...">
             </a>
             <div class="card-body">
               <b  class="card-text"><?php echo $course->title; ?></b><br>
