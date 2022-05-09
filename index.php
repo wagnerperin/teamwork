@@ -1,12 +1,14 @@
 <?php
-  ini_set('display_errors', 0);
-  error_reporting(E_ERROR);
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL);
+
   session_start();
-  require_once("inc/header.php");
-  require_once("inc/menu.php");
+  require_once __DIR__."/inc/header.php";
+  require_once __DIR__."/inc/menu.php";
+  require_once __DIR__."/models/CoursesDAO.php";
 
-
-?>
+  $courses = CoursesDAO::getInstance()->findIndex();
+?>  
 
 <div class="container mt-5">
   <div class="row">
@@ -136,92 +138,26 @@
     </div>
     <div class="col-9">
       <div class="row">
+        <?php 
+          foreach($courses as $course) {
+        ?>
         <div class="col-3">
-          <div class="card" style="width: 15rem;height: 264px;">
-            <a href="views/pageCourses.php"><img src="https://img-b.udemycdn.com/course/240x135/4152006_54df_5.jpg" class="card-img-top" alt="..."></a>
+          <div class="card ml-2" style="width: 15rem;height: 264px; ">
+            <a href="views/pageCourses.php?courseId=<?php echo $course->courseId; ?>">
+              <img src="<?php echo $course->image; ?>" alt="...">
+            </a>
             <div class="card-body">
-              <b class="card-text">Python Django 2021 - Complete Course</b><br>
-              <span style="font-size:13px" class="text-black-50">Victor Almeida</span><br>
-              <b>R$ 99,90</b>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card" style="width: 15rem;height: 264px;">
-            <img src="https://img-b.udemycdn.com/course/240x135/720750_6cba_8.jpg" alt="...">
-            <div class="card-body">
-              <b  class="card-text">Curso Completo JAVA para Iniciantes</b><br>
-              <span styles="font-size:13px" class="text-black-50">Silvana Aguiar</span><br>
+              <b  class="card-text"><?php echo $course->title; ?></b><br>
+              <span styles="font-size:13px" class="text-black-50"><?php echo $course->name; ?></span><br>
               <b>R$ 179,90</b>
             </div>
           </div>
         </div>
-        <div class="col-3">
-          <div class="card" style="width: 15rem; height: 264px;">
-            <img src="https://img-b.udemycdn.com/course/240x135/1048978_1887_3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <b class="card-text">Linguagem de programação C# - Básico</b><br>
-              <span styles="font-size:13px" class="text-black-50">Júlio Santana</span><br>
-              <b class="">R$ 79,90</b>
-            </div>
-          </div>
-        </div>
-        <div class="col-3"> 
-          <div class="card" style="width: 15rem; height: 264px;">
-            <img src="https://img-b.udemycdn.com/course/240x135/2255806_2642.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <b class="card-text">React, Redux e integração de APIs</b><br>
-              <span style="font-size:13px" class="text-black-50">Natan Oliveira</span><br>
-              <b>R$ 79,90</b>
-            </div>
-          </div>
-        </div>
+        <?php
+          }
+        ?>
       </div>
-      <div class="row mt-5">
-        <div class="col-3">
-          <div class="card" style="width: 15rem;height: 264px;">
-            <img src="https://img-b.udemycdn.com/course/240x135/619698_0efe.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <b class="card-text">Learn Advanced C++ Programming</b><br>
-              <span style="font-size:13px" class="text-black-50">Juliana Alves</span><br>
-              <b>R$ 89,90</b>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card" style="width: 15rem;height: 264px;">
-            <img src="https://img-b.udemycdn.com/course/240x135/999200_ae6d_4.jpg" alt="...">
-            <div class="card-body">
-              <b styles="" class="card-text">Introduction to TypeScript Development</b><br>
-              <span style="font-size:13px" class="text-black-50">Guilherme Santos</span><br>
-              <b>R$ 99,90</b>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card" style="width: 15rem; height: 264px;">
-            <img src="https://img-b.udemycdn.com/course/240x135/1309202_1231_4.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <b class="card-text">Concurrency in Go (Golang)</b><br>
-              <span style="font-size:13px" class="text-black-50">Roque Soares</span><br>
-              <b class="">R$ 179,90</b>
-            </div>
-          </div>
-        </div>
-        <div class="col-3"> 
-          <div class="card" style="width: 15rem; height: 264px;">
-            <img src="https://img-b.udemycdn.com/course/240x135/849236_792f_2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <b class="card-text">Aprenda e Domine a Linguagem C</b><br>
-              <span style="font-size:13px" class="text-black-50">Wanderson Oliveira</span><br>
-              <b>R$ 79,90</b>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
   </div>
 </div>
 

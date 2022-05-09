@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php //session_start(); ?>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <?php if($_SESSION['login'] == true) { ?>
     <div class="container-fluid justify-content-end">
