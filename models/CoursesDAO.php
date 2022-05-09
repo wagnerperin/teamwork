@@ -1,6 +1,6 @@
 <?php
-    require_once("../config/Banco.php"); 
-    require_once("Courses.php"); 
+    require_once __DIR__."/../config/Banco.php"; 
+    require_once __DIR__."/Courses.php"; 
 
     class CoursesDAO {
         private static $instance;
@@ -25,6 +25,23 @@
             $stmt->execute();
         }
         
+        public function find(int $id){
+            $stm= Banco::getInstance()->query("SELECT * FROM Courses LEFT JOIN Users ON Users.userId=Courses.creatorId WHERE courseId=\"$id\"", PDO::FETCH_OBJ);
+            $stm->execute();
+            return $stm->fetch();    
+        }
+
+        public function findIndex(int $limit = 10) {
+            $stm = Banco::getInstance()->query("
+                SELECT * 
+                FROM Courses 
+                LEFT JOIN Users ON Users.userId = Courses.creatorId 
+                ORDER BY Courses.courseId DESC 
+                LIMIT {$limit}
+             ");
+            return $stm->fetchAll(PDO::FETCH_OBJ);
+        }
+
     }
 
 ?>
