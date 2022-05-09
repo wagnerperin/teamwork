@@ -2,9 +2,13 @@
 
     require_once("../models/Enrollment.php");
     require_once("../models/EnrollmentDAO.php");
-    
-    EnrollmentDAO::getInstance()->save(new Enrollment($_POST['userId'], $_POST['courseId']));
 
-    header("Location: ../index.php");
+    require("../inc/checkLogedIn.php");
+
+    EnrollmentDAO::getInstance()->save(new Enrollment($_SESSION['userId'], $_GET['courseId']));
+
+    header("Location: ../index.php"); 
+    
+    
 
 ?>

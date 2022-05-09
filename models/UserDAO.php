@@ -26,7 +26,7 @@
         }
 
         public function findByMail($email) {
-         $user = Banco::getInstance()->query("SELECT password, email, userType, name FROM Users WHERE email = \"$email\"", PDO::FETCH_OBJ);
+         $user = Banco::getInstance()->query("SELECT userId, password, email, userType, name FROM Users WHERE email = \"$email\"", PDO::FETCH_OBJ);
          $user->execute();
          return $user->fetch();
 

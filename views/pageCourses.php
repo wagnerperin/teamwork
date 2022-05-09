@@ -5,6 +5,7 @@
   require_once("../inc/header.php");
   require_once("../inc/menu.php");
   require_once("../models/CoursesDAO.php");
+
   $curso = CoursesDAO::getInstance()->find($_GET['courseId']);
 
 ?>
@@ -17,7 +18,7 @@
      <h2 class="pt-3"><b class="text-secondary"> <?php echo $curso->title; ?> </b></h2>
      <h5 class="mt-3"><?php echo $curso->subtitle; ?></h5>
      <p class="mt-3"> <?php echo $curso->name;?> </p>
-     <input type="submit" class="btn btn-primary mt-3 px-5 py-2" placeholder="Inscreva-se" />
+     <a href="../controllers/saveEnrollment.php?courseId=<?php echo $curso->courseId ?>" type="button" class="btn btn-primary" onclick="">Inscreva-se</a>
     </div>
   </div>
   <div class="row mt-5">
