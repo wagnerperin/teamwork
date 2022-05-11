@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <?php if($_SESSION['login'] == true) { ?>
+  <?php if($_SESSION['logedIn'] == true) { ?>
     <div class="container-fluid justify-content-end">
       <div class="row ">
         <div class="col-12 ">
