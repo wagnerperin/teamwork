@@ -2,6 +2,9 @@
     include "../inc/header.php";
     include "../inc/menu.php";
     require("../inc/checkLogedIn.php");
+    require("../models/CategoriesDAO.php");
+
+    $categories = CategoriesDAO::getInstance()->findAll($stmt);
 ?>
 
 <div class="bg-light">
@@ -35,6 +38,20 @@
                     <fildset class="form-floating">
                         <textarea class="form-control" style="width: 432px;" name="description" id="floatingTextarea"></textarea>
                     </fildset>
+                </div>
+                <div class="col-md-4 pt-3">
+                    <label for="categoryCourse" class="form-label">Categoria do Curso</label><br>
+                    <select name="categoryId" id="categoryId">
+                    <?php 
+                        foreach($categories as $category) {
+                    ?>
+                        <option></option>   
+                        <option value="<?php $category->categoryId ?>"> <?php echo $category->name ?> </option>
+                    <?php
+                    }
+                    ?>
+                    </select>
+                </div>
                 <div class="col-12 pt-3">
                     <button class="btn btn-primary" type="submit">Criar</button>
                 </div>
