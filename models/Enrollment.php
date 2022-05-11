@@ -1,5 +1,4 @@
 <?php
-
     class Enrollment {
         public int $userId;
         public int $courseId;

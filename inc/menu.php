@@ -7,7 +7,7 @@
 
           <ul class="navbar-nav" class="">
             <li class="nav-item ">
-              <a class="nav-link active" href="/teamwork/views/newCourses.php">Criar Curso</a>
+              <a class="nav-link active" href="/teamwork/views/newCourse.php">Criar Curso</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/teamwork/views/login.php">Painel</a>

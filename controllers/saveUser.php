@@ -5,5 +5,4 @@
     UserDAO::getInstance()->save(new User($_POST['name'], $_POST['email'], $_POST['cpf'], $_POST['password'], 0));
 
     header("Location: ../index.php");
-
 ?>

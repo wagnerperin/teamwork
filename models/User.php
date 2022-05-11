@@ -7,7 +7,6 @@ class User {
     public int $userType;
     public string $createdAt;
 
-
     public function __construct(string $name, string $email, string $cpf, string $password, int $userType){
         $this->name = $name;
         $this->email = $email;
@@ -17,12 +16,5 @@ class User {
         $dataAtual = new DateTime();
         $this->createdAt = $dataAtual->format("Y-m-d");
     }
-    
-        
-    
-    
 }
-
-
-
 ?>
