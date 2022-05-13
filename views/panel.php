@@ -2,14 +2,14 @@
   require_once("../inc/header.php");
   require_once("../inc/menu.php");
   require_once("../models/EnrollmentDAO.php");
+  require_once("../models/UserDAO.php");
 
   ini_set('display_errors', 1);
   error_reporting(E_ALL);
 
-  $result = EnrollmentDAO::getInstance()->getCoursesFromUser($_SESSION['userId']);
+  $enrollments = EnrollmentDAO::getInstance()->getCoursesFromStudent($_SESSION['userId']);
 
-  $result2 = EnrollmentDAO::getInstance()->getUserFromCourses($_SESSION['creatorId']);
-  var_dump($result2);
+  $my_courses = EnrollmentDAO::getInstance()->getCoursesFromCreator($_SESSION['userId']);
 ?>
 
 <div class="container">
@@ -18,16 +18,20 @@
       <hr>
 
       <?php 
-        foreach($result as $enrollment) {
+        foreach($enrollments as $course) {
       ?>
       <div class="col-3">
         <div class="card ml-2" style="width: 15rem;height: 264px; ">
-          <a href="views/course.php?courseId=<?php echo $enrollment->courseId; ?>">
-            <img style="max-width: 100%" src="<?php echo $enrollment->image; ?>" alt="...">
+          <a href="views/course.php?courseId=<?php echo $course->courseId; ?>">
+            <img style="max-width: 100%" src="<?php echo $course->image; ?>" alt="...">
           </a>
           <div class="card-body">
-            <b  class="card-text"><?php echo $enrollment->title; ?></b><br>
-            <span styles="font-size:13px" class="text-black-50"><?php echo $enrollment->name; ?></span><br>
+            <b  class="card-text"><?php echo $course->title; ?></b><br>
+            <span styles="font-size:13px" class="text-black-50">
+              <?php 
+                $creator = UserDAO::getInstance()->findById($course->creatorId);
+                echo $creator->name;
+              ?></span><br>
             <b>R$ 179,90</b>
           </div>
         </div>
@@ -41,16 +45,16 @@
       <hr>
 
       <?php 
-        foreach($result2 as $enrollments) {
+        foreach($my_courses as $course) {
       ?>
       <div class="col-3">
         <div class="card ml-2" style="width: 15rem;height: 264px; ">
-          <a href="views/course.php?courseId=<?php echo $enrollments->courseId; ?>">
-            <img style="max-width: 100%" src="<?php echo $enrollments->image; ?>" alt="...">
+          <a href="views/course.php?courseId=<?php echo $course->courseId; ?>">
+            <img style="max-width: 100%" src="<?php echo $course->image; ?>" alt="...">
           </a>
           <div class="card-body">
-            <b  class="card-text"><?php echo $enrollments->title; ?></b><br>
-            <!--<span styles="font-size:13px" class="text-black-50"><?php echo $enrollments->name; ?></span><br>-->
+            <b  class="card-text"><?php echo $course->title; ?></b><br>
+            <span styles="font-size:13px" class="text-black-50"><?php echo $_SESSION['name'];?></span><br>
             <b>R$ 179,90</b>
           </div>
         </div>
