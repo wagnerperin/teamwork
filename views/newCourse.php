@@ -4,7 +4,7 @@
     require("../inc/checkLogedIn.php");
     require("../models/CategoriesDAO.php");
 
-    $categories = CategoriesDAO::getInstance()->findAll($stmt);
+    $categories = CategoriesDAO::getInstance()->findSpecificCategories($stmt);
 ?>
 
 <div class="bg-light">
@@ -28,11 +28,6 @@
                     <label for="validationCustom02" class="form-label">Imagem</label>
                     <input type="email" class="form-control" name="image" id="validationCustom02" placeholder="Insira a url da sua imagem"  required>
                 </div>
-                <!--<div class="col-md-4 pt-3">
-                    <div class="input-group has-validation ">
-                      <input type="file" class="form-control" placeholder="insira a url da sua imagem" name="image" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                    </div>
-                </div>-->
                 <div class="col-md-6 pt-3 ">
                     <label for="floatingTextarea">Descrição</label>
                     <fildset class="form-floating">
@@ -46,7 +41,7 @@
                         foreach($categories as $category) {
                     ?>
                         <option></option>   
-                        <option value="<?php $category->categoryId ?>"> <?php echo $category->name ?> </option>
+                        <option value="<?php echo $category->categoryId ?>"> <?php echo $category->name ?> </option>
                     <?php
                     }
                     ?>

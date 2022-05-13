@@ -12,10 +12,16 @@
             return self::$instance;
         }
 
-        public function findAll($stmt) {
+        public function findSpecificCategories($stmt) {
 
-            $stmt = Banco::getInstance()->query("SELECT name, categoryId FROM Categories");
+            $stmt = Banco::getInstance()->query("
+                SELECT * FROM Categories 
+                WHERE parentCategoryId IN 
+                    (SELECT categoryId FROM Categories 
+                    WHERE parentCategoryId = 1);
+            ");
             $stmt->execute();
+
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
         
