@@ -10,7 +10,7 @@
               <a class="nav-link active" href="/teamwork/views/newCourse.php">Criar Curso</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/teamwork/views/login.php">Painel</a>
+              <a class="nav-link" href="/teamwork/views/panel.php">Painel</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/teamwork/views/newUser.php"> <?php echo $_SESSION["name"]; ?> Seja bem vindo </a>
