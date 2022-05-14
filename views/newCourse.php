@@ -36,12 +36,12 @@
                 </div>
                 <div class="col-md-4 pt-3">
                     <label for="categoryCourse" class="form-label">Categoria do Curso</label><br>
-                    <select name="categoryId" id="categoryId">
+                    <select class="py-2 pe-5" name="categoryId" id="browsers">
+                    <option></option> 
                     <?php 
                         foreach($categories as $category) {
-                    ?>
-                        <option></option>   
-                        <option value="<?php echo $category->categoryId ?>"> <?php echo $category->name ?> </option>
+                    ?>  
+                        <option value="<?php echo $category->categoryId ?>"><?php echo $category->name ?></option>
                     <?php
                     }
                     ?>

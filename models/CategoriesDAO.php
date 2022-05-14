@@ -24,5 +24,24 @@
 
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
+
+        public function findAllCategoriesMain() {
+            $stmt = Banco::getInstance()->query("
+                SELECT * FROM Categories 
+                WHERE parentCategoryId = 1;
+            ");
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        public function findAllCategoriesByParentCategoryId($parentCategoryId) {
+            $stmt = Banco::getInstance()->query("
+                SELECT * FROM Categories 
+                WHERE parentCategoryId = \"$parentCategoryId\";
+            ");
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }
         
     }
