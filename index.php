@@ -1,6 +1,6 @@
 <?php
-  ini_set('display_errors', 1);
-  error_reporting(E_ALL);
+  ini_set('display_errors', 0);
+  error_reporting(E_ERROR);
   require_once __DIR__."/inc/header.php";
   require_once __DIR__."/inc/menu.php";
   require_once __DIR__."/models/CoursesDAO.php";
