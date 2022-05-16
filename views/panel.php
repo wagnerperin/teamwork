@@ -3,6 +3,7 @@
   require_once("../inc/menu.php");
   require_once("../models/EnrollmentDAO.php");
   require_once("../models/UserDAO.php");
+  require("../inc/checkLogedIn.php");
 
   ini_set('display_errors', 0);
   error_reporting(E_ERROR);
