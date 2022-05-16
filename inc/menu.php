@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar-expand-sm bg-dark navbar-dark">
   <?php if($_SESSION['logedIn'] == true) { ?>
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
@@ -10,7 +10,7 @@
         <div class="d-flex">
             <a style="margin-left: 17px;" class="navbar-brand text-white" href="/teamwork/views/panel.php"> <?php echo $_SESSION["name"]; ?> </a>
 
-            <form class="d-flex">
+            <form class="d-flex" action="/teamwork/index.php">
                 <input class="form-control me-2" type="search" placeholder="Course" aria-label="Search" name="courseName">
                 <button class="btn btn-primary" type="submit">Search</button>
             </form>        
