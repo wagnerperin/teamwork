@@ -38,14 +38,23 @@
             return $stm->fetch();    
         }
 
-        public function findIndex(int $limit = 10) {
+        public function findIndex(string $courseName = "", int $limit = 4) {
+            $whereFiltroCourse = "";
+            
 
-            $stm = Banco::getInstance()->query("
-                SELECT * FROM Courses 
-                LEFT JOIN Users ON Users.userId = Courses.creatorId 
-                ORDER BY Courses.courseId DESC 
-                LIMIT {$limit}
-             ");
+            if($courseName != ""){
+                $whereFiltroCourse = "AND (Courses.title like '%$courseName%' or Courses.subtitle like '%$courseName%')";
+            }
+
+
+            $SQL =  "SELECT * FROM Courses 
+            LEFT JOIN Users ON Users.userId = Courses.creatorId 
+            WHERE true 
+            {$whereFiltroCourse}
+            ORDER BY Courses.courseId DESC 
+            LIMIT {$limit}" ;
+
+            $stm = Banco::getInstance()->query($SQL);
             
             return $stm->fetchAll(PDO::FETCH_OBJ);
         }

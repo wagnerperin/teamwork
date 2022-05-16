@@ -4,8 +4,8 @@
   require_once("../models/EnrollmentDAO.php");
   require_once("../models/UserDAO.php");
 
-  ini_set('display_errors', 1);
-  error_reporting(E_ALL);
+  ini_set('display_errors', 0);
+  error_reporting(E_ERROR);
 
   $enrollments = EnrollmentDAO::getInstance()->getCoursesFromStudent($_SESSION['userId']);
 

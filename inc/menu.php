@@ -1,27 +1,22 @@
 <?php session_start(); ?>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <?php if($_SESSION['logedIn'] == true) { ?>
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/teamwork/">MS-Cursos</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/teamwork/views/newCourse.php">Criar Curso</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/teamwork/views/panel.php">Seus Cursos</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search">
-        <button class="btn btn-primary" type="button">Search</button>
-      </form>
-    </div>
-  </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="d-flex flex-row ">
+            <a class="navbar-brand" href="/teamwork">MS-Cursos</a>
+            <a class="navbar-brand text-white" href="/teamwork/views/newCourse.php">Criar Cursos</a>
+        </div>
+        <div class="d-flex">
+            <a style="margin-left: 17px;" class="navbar-brand text-white" href="/teamwork/views/panel.php"> <?php echo $_SESSION["name"]; ?> </a>
 
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Course" aria-label="Search" name="courseName">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>        
+        </div>
+      </div>
+    </nav>
  <?php }else{ ?>
 
         <div class="container-fluid">

@@ -1,11 +1,13 @@
 <?php
-  ini_set('display_errors', 0);
-  error_reporting(E_ERROR);
+
+
   require_once __DIR__."/inc/header.php";
   require_once __DIR__."/inc/menu.php";
   require_once __DIR__."/models/CoursesDAO.php";
+  $courseName = $_GET['courseName'] ?? "";
 
-  $courses = CoursesDAO::getInstance()->findIndex();
+  $courses = CoursesDAO::getInstance()->findIndex($courseName);
+  
 ?>  
 
 <div class="container mt-5">
@@ -140,7 +142,7 @@
           foreach($courses as $course) {
         ?>
         <div class="col-3">
-          <div class="card ml-2" style="width: 15rem;height: 264px; ">
+          <div class="card ml-4" style="width: 14rem; height: 264px; ">
             <a href="views/course.php?courseId=<?php echo $course->courseId; ?>">
               <img style="max-width: 100%" src="<?php echo $course->image; ?>" alt="...">
             </a>
