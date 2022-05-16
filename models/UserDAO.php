@@ -43,6 +43,18 @@
 
             return $user->fetch();
         }
+
+        public function findById(int $id) {
+
+            $user = Banco::getInstance()->query("
+                SELECT userId, password, email, userType, name 
+                FROM Users 
+                WHERE userId = \"$id\"", PDO::FETCH_OBJ
+            );
+            $user->execute();
+
+            return $user->fetch();
+        }
         
     }
 ?>

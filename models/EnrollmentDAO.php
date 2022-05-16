@@ -25,4 +25,32 @@
             $stmt->execute();
         }
         
+        public function getCoursesFromStudent(int $userId){
+
+            $stmt = Banco::getInstance()->prepare("
+                SELECT c.courseId, c.title, c.image, c.creatorId 
+                FROM Users as u, Courses as c, Enrollment as e 
+                WHERE e.userId = u.userId and e.courseId = c.courseId and u.userId = :userId
+            ");
+            
+            $stmt->bindParam("userId", $userId);
+            
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+
+        }  
+        
+        public function getCoursesFromCreator(int $creatorId){
+
+            $stmt= Banco::getInstance()->prepare("
+                SELECT * FROM Courses WHERE creatorId=:creatorId;            
+            ");
+
+            $stmt->bindParam("creatorId", $creatorId);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_OBJ); 
+        }
+
+        
     }
