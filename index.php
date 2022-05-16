@@ -27,18 +27,18 @@
              ?>
 
              <p>
-              <a style="text-decoration: none;" class="text-secondary" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <a style="text-decoration: none;" class="text-secondary" data-bs-toggle="collapse" href="#<?php echo "collapse".$mainCategory->name ?>" role="button" aria-expanded="false" aria-controls="<?php echo "collapse".$mainCategory->name ?>">
                <h5 class="mx-3 my-4"><?php echo $mainCategory->name ?></h5>
               </a>
              </p>
 
-             <div class="collapse" id="collapseExample2">
+             <div class="collapse" id="<?php echo "collapse".$mainCategory->name ?>">
               <div class="card card-body">
                <?php
                 $secundariesCategories =  CategoriesDAO::getInstance()->findAllCategoriesByParentCategoryId($mainCategory->categoryId);
                
                 foreach($secundariesCategories as $secundaryCategory) {
-                 echo $secundaryCategory->name . "<br>";
+                 echo "<a class=\"nav-link text-secondary\" href=\"#\">" . $secundaryCategory->name . "</a>";
                 }
                ?>
               </div>
