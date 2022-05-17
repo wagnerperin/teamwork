@@ -1,6 +1,5 @@
 <?php
 
-
   require_once __DIR__."/inc/header.php";
   require_once __DIR__."/inc/menu.php";
   require_once __DIR__."/models/CoursesDAO.php";
@@ -9,6 +8,7 @@
   $courseName = $_GET['courseName'] ?? "";
   $courses = CoursesDAO::getInstance()->findIndex($courseName);
   $mainCategories =  CategoriesDAO::getInstance()->findAllCategoriesMain();
+    
 ?>  
 
 <div class="container mt-5">
@@ -33,18 +33,22 @@
               </a>
              </p>
 
-             <div class="collapse" id="<?php echo "collapse".$mainCategory->name ?>">
+             <div class="collapse" id="<?php echo "collapse". $mainCategory->name ?>">
               <div class="card card-body">
-               <?php
-                $secundariesCategories =  CategoriesDAO::getInstance()->findAllCategoriesByParentCategoryId($mainCategory->categoryId);
+                
+              <?php 
+               $secundariesCategories =  CategoriesDAO::getInstance()->findAllCategoriesByParentCategoryId($mainCategory->categoryId);
                
-                foreach($secundariesCategories as $secundaryCategory) {
-                 echo "<a class=\"nav-link text-secondary\" href=\"#\">" . $secundaryCategory->name . "</a>";
+               foreach($secundariesCategories as $secundaryCategory) {
+              ?>
+                  <a class="nav-link text-secondary" href="filterCategory.php?categoryId=<?php echo $secundaryCategory->categoryId; ?>">
+                    <?php echo $secundaryCategory->name ?>
+                  </a>
+              <?php
                 }
-               ?>
+              ?>
               </div>
              </div>
-
              <?php
              }
              ?>
