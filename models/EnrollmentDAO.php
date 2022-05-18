@@ -42,13 +42,14 @@
 
         public function checkEnrollment(int $courseId, int $userId) {
             $stmt = Banco::getInstance()->prepare("
-                SELECT COUNT(*) FROM Enrollment WHERE courseId=6 AND userId=9;
+                SELECT * FROM Enrollment WHERE courseId=:courseId AND userId=:userId
             ");
+            $stmt->bindParam("courseId", $courseId);
             $stmt->bindParam("userId", $userId);
 
             $stmt->execute();
 
-            return $stmt->fetchAll(PDO::FETCH_OBJ);
+            return $stmt->fetchAll();
         }
         
         public function getCoursesFromCreator(int $creatorId){

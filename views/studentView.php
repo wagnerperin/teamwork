@@ -5,6 +5,7 @@
   require_once("../inc/header.php");
   require_once("../inc/menu.php");
   require_once("../models/CoursesDAO.php");
+  require_once("../inc/checkEnrollment.php");
 
   $curso = CoursesDAO::getInstance()->find($_GET['courseId']);
 ?>
