@@ -42,7 +42,7 @@
                
                foreach($secundariesCategories as $secundaryCategory) {
               ?>
-                  <a class="nav-link text-secondary" href="filterCategory.php?categoryId=<?php echo $secundaryCategory->categoryId; ?>">
+                  <a class="nav-link text-secondary" href="index.php?categoryId=<?php echo $secundaryCategory->categoryId; ?>">
                     <?php echo $secundaryCategory->name ?>
                   </a>
               <?php
