@@ -40,12 +40,15 @@
             return $stm->fetch();    
         }
 
-        public function findIndex(string $courseName = "", int $limit = 4) {
+        public function findCoursesWithFilters(string $courseName = "", int $categoryId = -1, int $limit = 4) {
             $whereFiltroCourse = "";
             
-
             if($courseName != ""){
                 $whereFiltroCourse = "AND (Courses.title like '%$courseName%' or Courses.subtitle like '%$courseName%')";
+            }
+
+            if($categoryId > 0){
+                $whereFiltroCourse = $whereFiltroCourse . "AND (Courses.categoryId =$categoryId)";
             }
 
 

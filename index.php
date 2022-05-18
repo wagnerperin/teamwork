@@ -6,7 +6,8 @@
   require_once __DIR__."/models/CategoriesDAO.php";
 
   $courseName = $_GET['courseName'] ?? "";
-  $courses = CoursesDAO::getInstance()->findIndex($courseName);
+  $categoryId = $_GET['categoryId'] ?? -1;
+  $courses = CoursesDAO::getInstance()->findCoursesWithFilters($courseName, $categoryId, 8);
   $mainCategories =  CategoriesDAO::getInstance()->findAllCategoriesMain();
     
 ?>  
