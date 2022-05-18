@@ -19,9 +19,7 @@
     </nav>
  <?php }else{ ?>
 
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
+
               <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
                   <div class="d-flex flex-row ">
@@ -37,9 +35,7 @@
                   </div>
                 </div>
               </nav>
-            </div>
-          </div>
-        </div>
+
 
   <?php } ?>
   
