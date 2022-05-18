@@ -22,23 +22,21 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
-
-            <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <div class="d-flex flex-row ">
-            <a class="navbar-brand" href="/teamwork">MS-Cursos</a>
-            <a class="navbar-brand text-white" href="/teamwork/views/login.php">Login</a>
-            <a class="navbar-brand text-white" href="/teamwork/views/newUser.php">Cadastro</a>
-        </div>
-        <div class="d-flex">
-            <form class="d-flex" action="/teamwork/index.php">
-                <input class="form-control me-2" type="search" placeholder="Course" aria-label="Search" name="courseName">
-                <button class="btn btn-primary" type="submit">Search</button>
-            </form>        
-        </div>
-      </div>
-    </nav>
-
+              <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <div class="d-flex flex-row ">
+                    <a class="navbar-brand" href="/teamwork">MS-Cursos</a>
+                    <a class="navbar-brand text-white" href="/teamwork/views/login.php">Login</a>
+                    <a class="navbar-brand text-white" href="/teamwork/views/newUser.php">Cadastro</a>
+                  </div>
+                  <div class="d-flex">
+                    <form class="d-flex" action="/teamwork/index.php">
+                      <input class="form-control me-2" type="search" placeholder="Course" aria-label="Search" name="courseName">
+                      <button class="btn btn-primary" type="submit">Search</button>
+                    </form>        
+                  </div>
+                </div>
+              </nav>
             </div>
           </div>
         </div>
