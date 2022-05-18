@@ -39,6 +39,17 @@
             return $stmt->fetchAll(PDO::FETCH_OBJ);
 
         }  
+
+        public function checkEnrollment(int $courseId, int $userId) {
+            $stmt = Banco::getInstance()->prepare("
+                SELECT COUNT(*) FROM Enrollment WHERE courseId=6 AND userId=9;
+            ");
+            $stmt->bindParam("userId", $userId);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }
         
         public function getCoursesFromCreator(int $creatorId){
 
