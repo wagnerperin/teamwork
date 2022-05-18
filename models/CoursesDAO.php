@@ -64,16 +64,6 @@
             return $stm->fetchAll(PDO::FETCH_OBJ);
         }
 
-        public function findFilterCoursesCategory(int $categoryId){
-            $stmt = Banco::getInstance()->query("
-                SELECT * FROM Courses 
-                WHERE courseId=\"$categoryId\"" 
-            );
-            $stmt->execute();
-
-            return $stmt->fetch(PDO::FETCH_OBJ);    
-        }
-
     }
 
 ?>
