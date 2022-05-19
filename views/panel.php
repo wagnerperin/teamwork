@@ -50,7 +50,7 @@
       ?>
       <div class="col-3">
         <div class="card ml-2" style="width: 15rem;height: 264px; ">
-          <a href="../inc/checkEnrollment.php?courseId=<?php echo $course->courseId; ?>">
+          <a href="./adminView.php?courseId=<?php echo $course->courseId; ?>">
             <img style="max-width: 100%" src="<?php echo $course->image; ?>" alt="...">
           </a>
           <div class="card-body">
