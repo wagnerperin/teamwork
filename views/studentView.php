@@ -5,7 +5,7 @@
   require_once("../inc/header.php");
   require_once("../inc/menu.php");
   require_once("../models/CoursesDAO.php");
-  //require_once("../inc/checkEnrollment.php");
+  require_once("../inc/checkEnrollment.php");
 
   $curso = CoursesDAO::getInstance()->find($_GET['courseId']);
 ?>
@@ -19,7 +19,7 @@
       <h2 class="pt-3"><b class="text-secondary"> <?php echo $curso->title; ?> </b></h2>
       <h5 class="mt-3"><?php echo $curso->subtitle; ?></h5>
       <p class="mt-3"> <?php echo $curso->name;?> </p>
-      <a href="../inc/checkEnrollment.php?courseId=<?php echo $curso->courseId ?>" type="button" class="btn btn-primary" onclick="">Ir para o curso</a>
+      <a href="../controllers/saveEnrollment.php?courseId=<?php echo $curso->courseId ?>" type="button" class="btn btn-primary" onclick="">Ir para o curso</a>
     </div>
   </div>
   <div class="row mt-5">
