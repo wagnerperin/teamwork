@@ -40,17 +40,16 @@
             return $stm->fetch();    
         }
 
-        public function findCoursesWithFilters(string $courseName = "", int $categoryId = -1, int $limit = 4) {
+        public function findCoursesWithFilters(string $courseName = "", int $categoryId = 0, int $limit = 4) {
             $whereFiltroCourse = "";
             
             if($courseName != ""){
-                $whereFiltroCourse = "AND (Courses.title like '%$courseName%' or Courses.subtitle like '%$courseName%')";
+                $whereFiltroCourse .= " AND (Courses.title like '%$courseName%' or Courses.subtitle like '%$courseName%')";
             }
 
-            if($categoryId > 0){
-                $whereFiltroCourse = $whereFiltroCourse . "AND (Courses.categoryId =$categoryId)";
+            if(empty($categoryId) == false){
+                $whereFiltroCourse .= " AND (Courses.categoryId = $categoryId)";
             }
-
 
             $SQL =  "SELECT * FROM Courses 
             LEFT JOIN Users ON Users.userId = Courses.creatorId 
@@ -63,6 +62,7 @@
             
             return $stm->fetchAll(PDO::FETCH_OBJ);
         }
+
 
     }
 
